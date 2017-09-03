@@ -1,0 +1,35 @@
+spring:
+  redis:
+#    cluster:
+#      在集群中执行命令时能重定向的最大值
+#      max-redirects:
+#      从主机端口对列表引导的列表，host:port。
+#      nodes:
+#    连接数据库使用的索引（默认0）。
+    database: 2
+#    链接 URL，将会覆盖主机、端口和密码，用户将被忽略。比如 redis://user:password@example.com:6379。
+#    url:
+#    服务主机（默认 localhost）。
+    host: 45.78.15.73
+#    密码。
+    password: redis
+#    HTTPS SSL 支持（默认 false）。
+    ssl: false
+    pool:
+#      连接池最大活动连接数（默认8）。
+      max-active: 8
+#      连接池最大空闲连接数（默认8）。
+      max-idle: 8
+#      当连接池耗尽时，阻止抛出分配异常的时间（毫秒）。使用负值表示无期限地阻止.（默认-1）。
+      max-wait: -1
+#      连接池最小空闲连接数。使用正值才有效（默认0）。
+      min-idle: 0
+#    服务端口（默认6379）。
+    port: 7290
+#    sentinel:
+#      服务名。
+#      master:
+#      主机端口对的列表，host:port。
+#      nodes:
+#    连接超时（毫秒）。使用正值才有效（默认0）。
+    timeout: 0
