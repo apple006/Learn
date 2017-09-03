@@ -1,4 +1,4 @@
-package top.cciradih.datajpa;
+package top.cciradih.spring.data.jpa;
 
 import org.springframework.data.repository.CrudRepository;
 
