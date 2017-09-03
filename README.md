@@ -1,2 +1,2 @@
-# Learn
-Drive life.
+# 学习
+驱动生活。
