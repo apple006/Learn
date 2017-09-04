@@ -14,7 +14,7 @@
 ## 学习目标
 
 * 结合 [Spring Boot](http://projects.spring.io/spring-boot/) 来加强对 [Spring Project](https://spring.io/projects/) 的认知，因为 [Spring](https://spring.io/) 在我心中是目前 [Java](https://www.oracle.com/java/index.html) 唯一一个值得研究的 [Java EE](http://www.oracle.com/technetwork/java/javaee/overview/index.html) 框架。
-* [Java](https://www.oracle.com/java/index.html) 的世界丰富多彩，除了对 [Spring Project](https://spring.io/projects/) 的学习，在其他领域也有许多值得学习的地方，比如 Gradle。
+* [Java](https://www.oracle.com/java/index.html) 的世界丰富多彩，除了对 [Spring Project](https://spring.io/projects/) 的学习，在其他领域也有许多值得学习的地方，比如 [Gradle](https://gradle.org/)。
 
 ## 学习计划
 
