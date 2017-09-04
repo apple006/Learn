@@ -23,23 +23,26 @@ public class UserServiceImpl implements UserService {
 
     @Override
     @Transactional
-    public void merchandise(String payer, String beneficiary, double amount) {
-        User user1 = repository.findByName(payer);
-        User user2 = repository.findByName(beneficiary);
+    public void merchandise(String payerName, String beneficiaryName, double amount) {
+        User payer = repository.findByName(payerName);
+        double payerBalance = payer.getBalance();
 
-        double balance1 = user1.getBalance();
-        double balance2 = user2.getBalance();
-        if (balance1 >= amount) {
-            balance1 -= amount;
-            balance2 += amount;
-
-            user1.setBalance(balance1);
-            user2.setBalance(balance2);
-
-            repository.save(user1);
-            repository.save(user2);
-        } else {
-            throw new RuntimeException(payer + "余额不足！");
+        if (payerBalance <= amount) {
+            throw new RuntimeException("交易失败！" + payer.getName() + "余额不足！");
+        } else if (payerName.equals(beneficiaryName)) {
+            throw new RuntimeException("交易失败！用户名重复！");
         }
+
+        User beneficiary = repository.findByName(beneficiaryName);
+        double beneficiaryBalance = beneficiary.getBalance();
+
+        payerBalance -= amount;
+        beneficiaryBalance += amount;
+
+        payer.setBalance(payerBalance);
+        beneficiary.setBalance(beneficiaryBalance);
+
+        repository.save(payer);
+        repository.save(beneficiary);
     }
 }

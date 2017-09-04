@@ -97,7 +97,11 @@ public class SpringDataJpaApplicationTests {
 //        User user2 = new User("user2", "user2@gmail,com", "user2.com");
 //        repository.save(user2);
         try {
-            service.merchandise("user1", "user2", 1.0);
+            String payerName = "user2";
+            String beneficiaryName = "user1";
+            double amount = 10.0;
+            service.merchandise(payerName, beneficiaryName, amount);
+            logger.info("交易成功！" + payerName + "支出" + amount + "，" + beneficiaryName + "收入" + amount + "。");
         } catch (RuntimeException e) {
             logger.info("{}", e.getMessage());
         }

@@ -5,5 +5,5 @@ package top.cciradih.spring.data.jpa.service;
  * @version 0.1
  */
 public interface UserService {
-    void merchandise(String payer, String beneficiary, double amount);
+    void merchandise(String payerName, String beneficiaryName, double amount);
 }
