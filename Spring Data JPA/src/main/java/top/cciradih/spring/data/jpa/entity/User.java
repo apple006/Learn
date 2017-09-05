@@ -1,19 +1,16 @@
 package top.cciradih.spring.data.jpa.entity;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 // JPA 使用 @Entity，NoSQL 使用 @Document
 @Entity
 public class User {
     // 主键
     @Id
-    //
-    @GeneratedValue
+    // 由程序控制主键生成策略
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
-    // 约束、不可为空、长度255
+    // 约束、不可为空、长度16
     @Column(unique = true, nullable = false, length = 16)
     private String name;
     @Column(unique = true, nullable = false)

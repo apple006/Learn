@@ -92,10 +92,10 @@ public class SpringDataJpaApplicationTests {
 
     @Test
     public void transactional() {
-//        User user1 = new User("user1", "user1@gmail,com", "user1.com");
-//        repository.save(user1);
-//        User user2 = new User("user2", "user2@gmail,com", "user2.com");
-//        repository.save(user2);
+        User user1 = new User("user1", "user1@gmail,com", "user1.com");
+        repository.save(user1);
+        User user2 = new User("user2", "user2@gmail,com", "user2.com");
+        repository.save(user2);
         try {
             String payerName = "user2";
             String beneficiaryName = "user1";
