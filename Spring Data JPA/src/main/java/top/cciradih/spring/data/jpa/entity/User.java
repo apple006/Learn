@@ -1,6 +1,7 @@
 package top.cciradih.spring.data.jpa.entity;
 
 import javax.persistence.*;
+import java.util.Date;
 
 // JPA 使用 @Entity，NoSQL 使用 @Document
 @Entity
@@ -17,6 +18,8 @@ public class User {
     private String email;
     private String website;
     private Double balance = 0.0;
+    private Date createTime = new Date();
+    private Boolean isAlive = true;
 
     protected User() {
 
@@ -68,14 +71,19 @@ public class User {
         this.balance = balance;
     }
 
-    @Override
-    public String toString() {
-        return "User{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                ", email='" + email + '\'' +
-                ", website='" + website + '\'' +
-                ", balance=" + balance +
-                '}';
+    public Date getCreateTime() {
+        return createTime;
+    }
+
+    public void setCreateTime(Date createTime) {
+        this.createTime = createTime;
+    }
+
+    public Boolean getAlive() {
+        return isAlive;
+    }
+
+    public void setAlive(Boolean alive) {
+        isAlive = alive;
     }
 }
