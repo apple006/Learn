@@ -1,3 +1,6 @@
+group 'top.cciradih'
+version '1.0-SNAPSHOT'
+
 // gradle tasks 查看任务
 // gradle wrapper 生成包装器
 // gradlew properties 查看属性
@@ -18,13 +21,13 @@ task copy(type: Copy) {
 }
 
 // 通过 base 插件创建压缩任务
-task zip(type: Zip){
+task zip(type: Zip) {
     from 'src'
 }
 
 // 你好，世界！
-task hello{
-    doLast{
+task hello {
+    doLast {
         println 'Hello, World!'
     }
 }
