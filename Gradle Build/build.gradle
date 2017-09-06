@@ -1,6 +1,3 @@
-group 'top.cciradih'
-version '1.0-SNAPSHOT'
-
 // gradle tasks 查看任务
 // gradle wrapper 生成包装器
 // gradlew properties 查看属性
@@ -9,6 +6,8 @@ plugins {
     id 'base'
 }
 
+group 'top.cciradih'
+version '1.0-SNAPSHOT'
 // 添加描述属性
 description = 'A trivial Gradle build'
 // 添加版本属性
