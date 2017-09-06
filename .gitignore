@@ -2,3 +2,7 @@
 /Spring Data Redis/spring-data-redis.iml
 /Spring REST Docs/spring-rest-docs.iml
 /.idea/
+/Gradle Build/gradle/
+/Gradle Build/gradlew
+/Gradle Build/gradle.properties
+/Gradle Build/gradlew.bat
