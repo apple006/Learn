@@ -4,10 +4,12 @@
 /Gradle Build/gradlew
 /Gradle Build/gradlew.bat
 
-/Spring Data JPA/spring-data-jpa.iml
 /Spring Data JPA/gradlew
 /Spring Data JPA/gradlew.bat
+/Spring Data JPA/spring-data-jpa.iml
 
 /Spring REST Docs/spring-rest-docs.iml
 
+/Spring Data Redis/gradlew
+/Spring Data Redis/gradlew.bat
 /Spring Data Redis/spring-data-redis.iml
