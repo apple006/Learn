@@ -18,7 +18,7 @@ import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
 
 @RunWith(SpringRunner.class)
 @WebMvcTest(UserController.class)
-@AutoConfigureRestDocs("target/generated-snippets")
+@AutoConfigureRestDocs("build/generated-snippets")
 public class SpringRestDocsApplicationTests {
     @Autowired
     private MockMvc mockMvc;

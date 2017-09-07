@@ -1,0 +1,61 @@
+= My Rest Docs API
+Hidari Chaochen <hidarichaochen@gmail.com>
+v1.0, 2017年9月3日
+:toc: left
+
+== Index
+
+=== Get
+
+.Request
+include::{snippets}/spring-rest-docs-application-tests/get-index/http-request.adoc[]
+
+.Response
+include::{snippets}/spring-rest-docs-application-tests/get-index/http-response.adoc[]
+
+== User
+
+=== GetOne
+
+.Request
+include::{snippets}/spring-rest-docs-application-tests/get-user/http-request.adoc[]
+
+.Parameters
+include::{snippets}/spring-rest-docs-application-tests/get-user/path-parameters.adoc[]
+
+.Response
+include::{snippets}/spring-rest-docs-application-tests/get-user/http-response.adoc[]
+
+.Fields
+include::{snippets}/spring-rest-docs-application-tests/get-user/response-fields.adoc[]
+
+=== GetAll
+
+.Request
+include::{snippets}/spring-rest-docs-application-tests/get-users/http-request.adoc[]
+
+.Response
+include::{snippets}/spring-rest-docs-application-tests/get-users/http-response.adoc[]
+
+.Fields
+include::{snippets}/spring-rest-docs-application-tests/get-users/response-fields.adoc[]
+
+=== Post
+
+.Request
+include::{snippets}/spring-rest-docs-application-tests/post-user/http-request.adoc[]
+
+.Parameters
+include::{snippets}/spring-rest-docs-application-tests/post-user/request-parameters.adoc[]
+
+.Response
+include::{snippets}/spring-rest-docs-application-tests/post-user/http-response.adoc[]
+
+.Fields
+include::{snippets}/spring-rest-docs-application-tests/post-user/response-fields.adoc[]
+
+
+[bibliography]
+== 参考
+- link:http://projects.spring.io/spring-restdocs/[Spring REST Docs]
+- link:http://asciidoctor.org/[Asciidoctor | An open source implementation of AsciiDoc in Ruby]
