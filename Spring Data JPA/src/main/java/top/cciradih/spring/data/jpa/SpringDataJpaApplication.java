@@ -1,12 +1,12 @@
-package top.cciradih.spring.data.redis;
+package top.cciradih.spring.data.jpa;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class DataredisApplication {
+public class SpringDataJpaApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(DataredisApplication.class, args);
+		SpringApplication.run(SpringDataJpaApplication.class, args);
 	}
 }
