@@ -13,22 +13,19 @@ public class User {
     private Long id;
     // 约束、不可为空、长度16
     @Column(unique = true, nullable = false, length = 16)
-    private String name;
+    private String username;
     @Column(unique = true, nullable = false)
     private String email;
-    private String website;
     private Double balance = 0.0;
+    @Column(updatable = false)
     private Date createTime = new Date();
-    private Boolean isAlive = true;
 
-    protected User() {
-
+    public User() {
     }
 
-    public User(String name, String email, String website) {
-        this.name = name;
+    public User(String username, String email) {
+        this.username = username;
         this.email = email;
-        this.website = website;
     }
 
     public Long getId() {
@@ -39,12 +36,12 @@ public class User {
         this.id = id;
     }
 
-    public String getName() {
-        return name;
+    public String getUsername() {
+        return username;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setUsername(String username) {
+        this.username = username;
     }
 
     public String getEmail() {
@@ -53,14 +50,6 @@ public class User {
 
     public void setEmail(String email) {
         this.email = email;
-    }
-
-    public String getWebsite() {
-        return website;
-    }
-
-    public void setWebsite(String website) {
-        this.website = website;
     }
 
     public Double getBalance() {
@@ -79,11 +68,14 @@ public class User {
         this.createTime = createTime;
     }
 
-    public Boolean getAlive() {
-        return isAlive;
-    }
-
-    public void setAlive(Boolean alive) {
-        isAlive = alive;
+    @Override
+    public String toString() {
+        return "User{" +
+                "id=" + id +
+                ", username='" + username + '\'' +
+                ", email='" + email + '\'' +
+                ", balance=" + balance +
+                ", createTime=" + createTime +
+                '}';
     }
 }

@@ -1,9 +1,6 @@
 package top.cciradih.spring.data.jpa.entity;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.io.Serializable;
 import java.util.Date;
 
@@ -16,15 +13,42 @@ public class Transaction implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
-    private String outTradeNo;
-    private String no;
-    private Boolean status = false;
-    private String userId;
-    private String product;
-    private String fee;
-    private Date beginTime = new Date();
+
+    @Column(unique = true, nullable = false, updatable = false, length = 16)
+    private Long internalOrder;
+
+    @Column(unique = true)
+    private Long externalOrder;
+
+    private Boolean paymentStatus = false;
+
+    @Column(nullable = false, updatable = false, length = 16)
+    private Long userId;
+
+    @Column(nullable = false)
+    private String productName;
+
+    @Column(nullable = false, updatable = false)
+    private Double orderAmount;
+
+    @Column(updatable = false)
+    private Date createTime = new Date();
+
     private Date endTime;
-    private String type;
+
+    @Column(nullable = false)
+    private String paymentMethod;
+
+    public Transaction() {
+    }
+
+    public Transaction(Long internalOrder, Long userId, String productName, Double orderAmount, String paymentMethod) {
+        this.internalOrder = internalOrder;
+        this.userId = userId;
+        this.productName = productName;
+        this.orderAmount = orderAmount;
+        this.paymentMethod = paymentMethod;
+    }
 
     public Long getId() {
         return id;
@@ -34,60 +58,60 @@ public class Transaction implements Serializable {
         this.id = id;
     }
 
-    public String getOutTradeNo() {
-        return outTradeNo;
+    public Long getInternalOrder() {
+        return internalOrder;
     }
 
-    public void setOutTradeNo(String outTradeNo) {
-        this.outTradeNo = outTradeNo;
+    public void setInternalOrder(Long internalOrder) {
+        this.internalOrder = internalOrder;
     }
 
-    public String getNo() {
-        return no;
+    public Long getExternalOrder() {
+        return externalOrder;
     }
 
-    public void setNo(String no) {
-        this.no = no;
+    public void setExternalOrder(Long externalOrder) {
+        this.externalOrder = externalOrder;
     }
 
-    public Boolean getStatus() {
-        return status;
+    public Boolean getPaymentStatus() {
+        return paymentStatus;
     }
 
-    public void setStatus(Boolean status) {
-        this.status = status;
+    public void setPaymentStatus(Boolean paymentStatus) {
+        this.paymentStatus = paymentStatus;
     }
 
-    public String getUserId() {
+    public Long getUserId() {
         return userId;
     }
 
-    public void setUserId(String userId) {
+    public void setUserId(Long userId) {
         this.userId = userId;
     }
 
-    public String getProduct() {
-        return product;
+    public String getProductName() {
+        return productName;
     }
 
-    public void setProduct(String product) {
-        this.product = product;
+    public void setProductName(String productName) {
+        this.productName = productName;
     }
 
-    public String getFee() {
-        return fee;
+    public Double getOrderAmount() {
+        return orderAmount;
     }
 
-    public void setFee(String fee) {
-        this.fee = fee;
+    public void setOrderAmount(Double orderAmount) {
+        this.orderAmount = orderAmount;
     }
 
-    public Date getBeginTime() {
-        return beginTime;
+    public Date getCreateTime() {
+        return createTime;
     }
 
-    public void setBeginTime(Date beginTime) {
-        this.beginTime = beginTime;
+    public void setCreateTime(Date createTime) {
+        this.createTime = createTime;
     }
 
     public Date getEndTime() {
@@ -98,11 +122,27 @@ public class Transaction implements Serializable {
         this.endTime = endTime;
     }
 
-    public String getType() {
-        return type;
+    public String getPaymentMethod() {
+        return paymentMethod;
     }
 
-    public void setType(String type) {
-        this.type = type;
+    public void setPaymentMethod(String paymentMethod) {
+        this.paymentMethod = paymentMethod;
+    }
+
+    @Override
+    public String toString() {
+        return "Transaction{" +
+                "id=" + id +
+                ", internalOrder=" + internalOrder +
+                ", externalOrder=" + externalOrder +
+                ", paymentStatus=" + paymentStatus +
+                ", userId=" + userId +
+                ", productName='" + productName + '\'' +
+                ", orderAmount=" + orderAmount +
+                ", createTime=" + createTime +
+                ", endTime=" + endTime +
+                ", paymentMethod='" + paymentMethod + '\'' +
+                '}';
     }
 }
