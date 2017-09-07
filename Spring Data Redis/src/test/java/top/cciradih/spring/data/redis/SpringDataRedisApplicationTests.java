@@ -28,7 +28,7 @@ public class SpringDataRedisApplicationTests {
 //        user.setEmail("hidarichaochen@gmail.com");
 //
 //        hashMapping.writeHash("user",user);
-        User user = hashMapping.loadHash("user");
-        System.out.println(user.getName());
+//        User user = hashMapping.loadHash("user");
+//        System.out.println(user.getName());
     }
 }
