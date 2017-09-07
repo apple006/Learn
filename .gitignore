@@ -1,9 +1,13 @@
+.idea
+
 /Gradle Build/gradle/
 /Gradle Build/gradlew
 /Gradle Build/gradlew.bat
-.idea
-/Spring REST Docs/spring-rest-docs.iml
-/Spring Data Redis/spring-data-redis.iml
+
 /Spring Data JPA/spring-data-jpa.iml
 /Spring Data JPA/gradlew
 /Spring Data JPA/gradlew.bat
+
+/Spring REST Docs/spring-rest-docs.iml
+
+/Spring Data Redis/spring-data-redis.iml
